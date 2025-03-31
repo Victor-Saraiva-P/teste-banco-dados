@@ -5,7 +5,7 @@ from config import DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
 
 def criar_tabelas():
     """
-    Conecta ao MySQL e executa as queries de criacao das tabelas.
+    Conecta ao MySQL, limpa as tabelas existentes e recria todas as tabelas.
     """
     logging.info("Conectando ao banco de dados MySQL...")
     conn = None
@@ -22,22 +22,28 @@ def criar_tabelas():
 
         cursor = conn.cursor()
 
+        # Removendo tabelas existentes
+        logging.info("Removendo tabelas existentes...")
+        cursor.execute("DROP TABLE IF EXISTS demonstracoes_contabeis")
+        cursor.execute("DROP TABLE IF EXISTS operadoras")
+
+        # Criando as tabelas novamente
+        logging.info("Recriando tabelas...")
         query1 = """-- MySQL
         CREATE TABLE IF NOT EXISTS demonstracoes_contabeis (
-            id INT AUTO_INCREMENT PRIMARY KEY, 
-            operador VARCHAR(255), 
-            categoria VARCHAR(255), 
-            despesa DECIMAL(12,2), 
-            data_operacao DATE, 
-            outros_campos TEXT
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            data DATE,
+            reg_ans INT,
+            cd_conta_contabil INT,
+            descricao TEXT
         )"""
 
         query2 = """-- MySQL
         CREATE TABLE IF NOT EXISTS operadoras (
             id INT AUTO_INCREMENT PRIMARY KEY,
-            codigo VARCHAR(50),
-            nome VARCHAR(255),
-            endereco TEXT
+            registro_ans INT,
+            cnpj INT,
+            razao_social TEXT
         )"""
         cursor.execute(query1)
         cursor.execute(query2)
