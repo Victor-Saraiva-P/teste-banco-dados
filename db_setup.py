@@ -1,5 +1,7 @@
-import mysql.connector
 import logging
+
+import mysql.connector
+
 from config import DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
 
 
@@ -35,7 +37,9 @@ def criar_tabelas():
             data DATE,
             reg_ans INT,
             cd_conta_contabil INT,
-            descricao TEXT
+            descricao TEXT,
+            vl_saldo_inicial DECIMAL(15,2),
+            vl_saldo_final DECIMAL(15,2)
         )"""
 
         query2 = """-- MySQL

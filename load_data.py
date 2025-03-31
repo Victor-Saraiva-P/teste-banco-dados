@@ -1,6 +1,8 @@
-﻿import mysql.connector
+﻿import glob
 import logging
-import glob
+
+import mysql.connector
+
 from config import DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
 
 
@@ -36,11 +38,11 @@ def carregar_dados():
                 LOAD DATA LOCAL INFILE '{caminho.replace('\\', '/')}' 
                 INTO TABLE demonstracoes_contabeis
                 CHARACTER SET utf8mb4
-                FIELDS TERMINATED BY ';' -- Ajuste aqui se o delimitador for diferente
-                OPTIONALLY ENCLOSED BY '"' -- Ajuste se os valores estiverem entre aspas
+                FIELDS TERMINATED BY ';'
+                OPTIONALLY ENCLOSED BY '"'
                 LINES TERMINATED BY '\\n'
                 IGNORE 1 LINES
-                (data, reg_ans, cd_conta_contabil, descricao);
+                (data, reg_ans, cd_conta_contabil, descricao, vl_saldo_inicial, vl_saldo_final);
                 """
 
                 cursor.execute(query_load_demonstracoes)
