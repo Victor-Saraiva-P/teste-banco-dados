@@ -1,7 +1,7 @@
 import logging
 import os
 
-from analise import top_dez_operadoras
+from analise import top_dez_operadoras_trimestre, top_dez_operadoras_ultimo_ano
 from cleaner import limpar_pasta_download
 from config import DEMONSTRACOES_URL, OPERADORAS_URL, PASTA_DOWNLOAD, ANOS
 from db_setup import criar_tabelas
@@ -42,7 +42,9 @@ def main():
     carregar_dados()
 
     # Executa a análise após carregar os dados
-    top_dez_operadoras()
+    top_dez_operadoras_trimestre()
+
+    top_dez_operadoras_ultimo_ano()
 
 if __name__ == "__main__":
     main()
