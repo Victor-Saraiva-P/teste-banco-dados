@@ -49,7 +49,8 @@ def main():
     print(f"Top 10 operadoras com maiores despesas em '{CATEGORIA_ANALISE}' no último trimestre de 2024:")
     print(top_semestre)
 
-    print("-------------------------------------")
+    print(
+        "------------------------------------------------------------------------------------------------------------------")
 
     top_ano = top_dez_operadoras_ultimo_ano()
     print(f"Quais as 10 operadoras com maiores despesas nessa categoria no último ano?")
