@@ -3,7 +3,7 @@ import os
 
 from analise import top_dez_operadoras_trimestre, top_dez_operadoras_ultimo_ano
 from cleaner import limpar_pasta_download
-from config import DEMONSTRACOES_URL, OPERADORAS_URL, PASTA_DOWNLOAD, ANOS
+from config import DEMONSTRACOES_URL, OPERADORAS_URL, PASTA_DOWNLOAD, ANOS, ANO_ANALISE, CATEGORIA_ANALISE
 from db_setup import criar_tabelas
 from downloader import baixar_demonstracoes, baixar_operadoras_csv
 from load_data import carregar_dados
@@ -42,9 +42,20 @@ def main():
     carregar_dados()
 
     # Executa a análise após carregar os dados
-    top_dez_operadoras_trimestre()
+    logging.info("Iniciando análise dos dados do csv")
 
-    top_dez_operadoras_ultimo_ano()
+    top_semestre = top_dez_operadoras_trimestre()
+    print(f"Quais as 10 operadoras com maiores despesas em '{CATEGORIA_ANALISE}' no último trimestre?")
+    print(f"Top 10 operadoras com maiores despesas em '{CATEGORIA_ANALISE}' no último trimestre de 2024:")
+    print(top_semestre)
+
+    print("-------------------------------------")
+
+    top_ano = top_dez_operadoras_ultimo_ano()
+    print(f"Quais as 10 operadoras com maiores despesas nessa categoria no último ano?")
+    print(f"Top 10 operadoras com maiores despesas em '{CATEGORIA_ANALISE}' no ano {ANO_ANALISE}:")
+    print(top_ano)
+
 
 if __name__ == "__main__":
     main()
