@@ -5,7 +5,7 @@ from cleaner import limpar_pasta_download
 from db_setup import criar_tabelas
 from downloader import baixar_demonstracoes, baixar_operadoras_csv
 from config import DEMONSTRACOES_URL, OPERADORAS_URL, PASTA_DOWNLOAD, ANOS
-
+from load_data import carregar_dados
 
 
 def main():
@@ -36,6 +36,9 @@ def main():
 
     # Baixar os arquivos CSV das operadoras
     baixar_operadoras_csv(OPERADORAS_URL, pasta_operadoras)
+
+    # Carrega os dados dos CSVs para as tabelas no banco de dados
+    carregar_dados()
 
 
 if __name__ == "__main__":
