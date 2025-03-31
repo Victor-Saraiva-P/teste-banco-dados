@@ -20,8 +20,8 @@ def main():
 
     logging.info("Iniciando o download dos arquivos de demonstrações contábeis...")
 
-    # TODO: baixar as demonstrações contábeis
-    # baixar_demonstracoes(DEMONSTRACOES_URL, pasta_demonstracoes, ANOS)
+    # Baixar as demonstrações contábeis
+    baixar_demonstracoes(DEMONSTRACOES_URL, pasta_demonstracoes, ANOS)
 
     # Pasta de operadoras
     pasta_operadoras = os.path.join(PASTA_DOWNLOAD, "operadoras")
@@ -29,8 +29,8 @@ def main():
 
     logging.info("Iniciando o download dos arquivos de operadoras...")
 
-    # TODO: baixar os arquivos CSV das operadoras
-    # baixar_operadoras_csv(OPERADORAS_URL, pasta_operadoras)
+    # Baixar os arquivos CSV das operadoras
+    baixar_operadoras_csv(OPERADORAS_URL, pasta_operadoras)
 
 
 if __name__ == "__main__":
