@@ -2,6 +2,7 @@ import os
 import logging
 
 from cleaner import limpar_pasta_download
+from db_setup import criar_tabelas
 from downloader import baixar_demonstracoes, baixar_operadoras_csv
 from config import DEMONSTRACOES_URL, OPERADORAS_URL, PASTA_DOWNLOAD, ANOS
 
@@ -10,6 +11,10 @@ from config import DEMONSTRACOES_URL, OPERADORAS_URL, PASTA_DOWNLOAD, ANOS
 def main():
     # Configurações de logging
     logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+    # Criação das tabelas no banco de dados
+    logging.info("Criando as tabelas no banco de dados...")
+    criar_tabelas()
 
     # Limpa a pasta de downloads a cada execução
     limpar_pasta_download(PASTA_DOWNLOAD)
