@@ -18,3 +18,7 @@ DB_PORT = 3306
 DB_NAME = "teste_banco_dados_db"
 DB_USER = "mysql"
 DB_PASSWORD = "admin"
+
+# Define o período do último trimestre de 2024
+INICIO_TRIMESTRE = "2024-10-01"
+FIM_TRIMESTRE = "2024-12-31"

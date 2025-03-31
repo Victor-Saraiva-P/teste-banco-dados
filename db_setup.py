@@ -35,6 +35,7 @@ def criar_tabelas():
         CREATE TABLE IF NOT EXISTS demonstracoes_contabeis (
             id INT AUTO_INCREMENT PRIMARY KEY,
             data DATE,
+            
             reg_ans INT,
             cd_conta_contabil INT,
             descricao TEXT,

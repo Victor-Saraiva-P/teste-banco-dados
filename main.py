@@ -1,10 +1,11 @@
-import os
 import logging
+import os
 
+from analise import top_dez_operadoras
 from cleaner import limpar_pasta_download
+from config import DEMONSTRACOES_URL, OPERADORAS_URL, PASTA_DOWNLOAD, ANOS
 from db_setup import criar_tabelas
 from downloader import baixar_demonstracoes, baixar_operadoras_csv
-from config import DEMONSTRACOES_URL, OPERADORAS_URL, PASTA_DOWNLOAD, ANOS
 from load_data import carregar_dados
 
 
@@ -40,6 +41,8 @@ def main():
     # Carrega os dados dos CSVs para as tabelas no banco de dados
     carregar_dados()
 
+    # Executa a análise após carregar os dados
+    top_dez_operadoras()
 
 if __name__ == "__main__":
     main()
