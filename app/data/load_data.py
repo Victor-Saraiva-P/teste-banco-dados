@@ -3,8 +3,8 @@ import logging
 
 import mysql.connector
 
-from config import DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
-from sql_util import ler_sql_arquivo
+from app.config import DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
+from app.database.sql_util import ler_sql_arquivo
 
 
 def carregar_dados():

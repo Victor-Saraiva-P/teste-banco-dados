@@ -1,12 +1,12 @@
 import logging
 import os
 
-from analise import top_dez_operadoras_trimestre, top_dez_operadoras_ultimo_ano
-from cleaner import limpar_pasta_download
-from config import DEMONSTRACOES_URL, OPERADORAS_URL, PASTA_DOWNLOAD, ANOS, ANO_ANALISE, CATEGORIA_ANALISE
-from db_setup import criar_tabelas
-from downloader import baixar_demonstracoes, baixar_operadoras_csv
-from load_data import carregar_dados
+from app.analysis.analise import top_dez_operadoras_trimestre, top_dez_operadoras_ultimo_ano
+from app.config import DEMONSTRACOES_URL, OPERADORAS_URL, PASTA_DOWNLOAD, ANOS, ANO_ANALISE, CATEGORIA_ANALISE
+from app.data.cleaner import limpar_pasta_download
+from app.data.downloader import baixar_demonstracoes, baixar_operadoras_csv
+from app.data.load_data import carregar_dados
+from app.database.db_setup import criar_tabelas
 
 
 def main():

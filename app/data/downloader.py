@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
 from bs4 import BeautifulSoup
 
-from config import MAX_WORKERS
+from app.config import MAX_WORKERS
 
 
 def obter_sopa(url: str) -> BeautifulSoup:

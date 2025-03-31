@@ -3,9 +3,9 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-from config import DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD, FIM_TRIMESTRE, INICIO_TRIMESTRE, ANO_ANALISE, \
+from app.config import DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD, FIM_TRIMESTRE, INICIO_TRIMESTRE, ANO_ANALISE, \
     CATEGORIA_ANALISE
-from sql_util import ler_sql_arquivo
+from app.database.sql_util import ler_sql_arquivo
 
 
 def top_dez_operadoras_trimestre():
