@@ -22,3 +22,5 @@ DB_PASSWORD = "admin"
 # Define o período do último trimestre de 2024
 INICIO_TRIMESTRE = "2024-10-01"
 FIM_TRIMESTRE = "2024-12-31"
+
+ANO_ANALISE = "2024"
