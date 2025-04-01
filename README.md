@@ -46,8 +46,7 @@ teste-banco-dados/
 1. **Clone o Repositório:**
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/Victor-Saraiva-P/teste-api
 ```
 
 2. **Configure o Ambiente Python:**
@@ -58,9 +57,16 @@ source venv/bin/activate  # ou venv\Scripts\activate no Windows
 pip install -r requirements.txt
 ```
 
-3. **Configure o Banco de Dados MySQL:** Certifique-se de que você tem um servidor MySQL rodando localmente e crie um banco de dados.
+3. **Suba o ambiente com Docker (MySQL):**
 
-Atualize as credenciais de acesso ao banco em `config.py` se necessário.
+Certifique-se de que você tem o Docker instalado. Em seguida, execute:
+
+```bash
+docker-compose up -d
+```
+
+Isso iniciará um contêiner com o MySQL configurado.
+
 
 4. **Execute a Aplicação:**
 
